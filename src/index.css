@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root[data-theme="light"] {
+  --bg: #FAFAF7;
+  --surface: #FFFFFF;
+  --ink: #1B1E27;
+  --ink-soft: #5B5F6B;
+  --amber: #C97A1D;
+  --amber-text: #96590A;
+  --board: #1B1E27;
+  --board-digit: #F4E3C6;
+}
+
+:root[data-theme="dark"] {
+  --bg: #14171F;
+  --surface: #1B1F2A;
+  --ink: #F1EFE6;
+  --ink-soft: #9A9DAC;
+  --amber: #E8A23D;
+  --board: #0D0F15;
+  --board-digit: #E8A23D;
+}
+
+.btn {
+  transition: all 150ms ease;
+}
+
+.btn:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--amber-glow, rgba(201, 122, 29, 0.35));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}

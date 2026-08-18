@@ -1,0 +1,29 @@
+{
+  "name": "my-study-sprint",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "start:staging": "cross-env APP_ENV=staging PORT=4000 node build.js && cross-env APP_ENV=staging PORT=4000 node server.js",
+    "start:production": "cross-env APP_ENV=production PORT=8080 node build.js && cross-env APP_ENV=production PORT=8080 node server.js"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.2",
+    "cross-env": "^7.0.3",
+    "express": "^4.19.2",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "oxlint": "^1.71.0",
+    "vite": "^8.1.1"
+  }
+}
