@@ -23,6 +23,23 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok", environment: APP_ENV });
 });
 
+// Returns a random motivational quote for study sprints.
+const quotes = [
+  "Small steps every day add up to big progress.",
+  "Focus on progress, not perfection.",
+  "One sprint at a time.",
+  "Discipline beats motivation.",
+  "Done is better than perfect.",
+];
+
+app.get("/api/quote", (req, res) => {
+  if (!quotes.length) {
+    return res.status(500).json({ error: "No quotes available" });
+  }
+  const random = quotes[Math.floor(Math.random() * quotes.length)];
+  res.json({ quote: random });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running in [${APP_ENV}] mode on http://localhost:${PORT}`);
 });
