@@ -32,7 +32,9 @@ const quotes = [
   "Done is better than perfect.",
 ];
 
+
 app.get("/api/quote", (req, res) => {
+  // Guard added per review feedback — prevents crash if quotes array is ever empty 
   if (!quotes.length) {
     return res.status(500).json({ error: "No quotes available" });
   }
